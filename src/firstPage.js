@@ -20,21 +20,22 @@ const App = () => {
   return (
     <>
       <div>
-        <h5>Email</h5>
-        <ul>
-          {user.map((data) => (
-            <li key={data.id}>{data.email} </li>
-          ))}
-        </ul>
+        {" "}
         <h5>firstname</h5>
         <ul>
           {user.map((data) => (
             <Link to={`/userdetals/${data.user_id}`}>
               <li key={data.id}>
                 {" "}
-                <button>{data.email}</button>
+                <button>{data.firstname}</button>
               </li>
             </Link>
+          ))}
+        </ul>
+        <h5>Email</h5>
+        <ul>
+          {user.map((data) => (
+            <li key={data.id}>{data.email} </li>
           ))}
         </ul>
       </div>
