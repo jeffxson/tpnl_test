@@ -20,19 +20,19 @@ const App = () => {
   return (
     <>
       <div>
-        <h5>FirstName</h5>
-        <ul>
-          {user.map((data) => (
-            <li key={data.id}>{data.firstname} </li>
-          ))}
-        </ul>
         <h5>Email</h5>
         <ul>
           {user.map((data) => (
-            <Link to={`/userdetals/${data.user_id}`}>
+            <li key={data.id}>{data.email} </li>
+          ))}
+        </ul>
+        <h5>firstname</h5>
+        <ul>
+          {user.map((data) => (
+            <Link to={`/userdetals/${data.firstname}`}>
               <li key={data.id}>
                 {" "}
-                <button>{data.email}</button>{" "}
+                <button>{data.email}</button>
               </li>
             </Link>
           ))}
