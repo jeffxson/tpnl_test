@@ -8,6 +8,7 @@ const App = () => {
   const [pic, setPic] = useState([]);
   const [picc, setPicc] = useState([]);
   const [car, setCar] = useState([]);
+  const [phone, setPhoneNo] = useState("");
   const { id } = useParams();
 
   useEffect(() => {
@@ -26,11 +27,31 @@ const App = () => {
       });
   });
 
-  console.log(user);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const data = {
+      phone_no: phone,
+    };
+    const phone_no = JSON.stringify(phone);
+    axios.put(
+      `https://interviewtst.herokuapp.com/update-user-phone_no/${id}`,
+      data
+    );
+
+    console.log(phone_no);
+  };
+
   return (
     <>
       <div>
         <h4>Profile</h4>
+        <form onSubmit={handleSubmit}>
+          <label>
+            <span> Update phone:</span>
+            <input type="text" onChange={(e) => setPhoneNo(e.target.value)} />
+          </label>
+          <button>Update Number</button>
+        </form>
 
         {user.map((data) => (
           <div key={data.id}>
