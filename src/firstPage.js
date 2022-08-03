@@ -29,7 +29,7 @@ const App = () => {
         <h5>firstname</h5>
         <ul>
           {user.map((data) => (
-            <Link to={`/userdetals/${data.firstname}`}>
+            <Link to={`/userdetals/${data.user_id}`}>
               <li key={data.id}>
                 {" "}
                 <button>{data.email}</button>
